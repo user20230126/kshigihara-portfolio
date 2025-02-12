@@ -45,25 +45,25 @@ public class UserDetail implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        // 従業員が期限切れでなければtrueを返す
+        // 期限切れでなければtrueを返す
         return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        // 従業員がロックされていなければtrueを返す
+        // ロックされていなければtrueを返す
         return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        // 従業員のパスワードが期限切れでなければtrueを返す
+        // パスワードが期限切れでなければtrueを返す
         return true;
     }
 
     @Override
     public boolean isEnabled() {
-        // 従業員が有効であればtrueを返す
+        // 有効であればtrueを返す
         return true;
     }
 }

@@ -3,6 +3,6 @@ INSERT INTO daily_report_system.employees(code,name,role,password,delete_flg,cre
 INSERT INTO daily_report_system.employees(code,name,role,password,delete_flg,created_at,updated_at)
      VALUES ("2","田中　次郎","GENERAL","$2a$10$HPIjRCymeRZKEIq.71TDduiEotOlb8Ai6KQUHCs4lGNYlLhcKv4Wi",0,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
 INSERT INTO daily_report_system.reports(report_date,title,content,employee_code,delete_flg,created_at,updated_at)
-     VALUES (CURRENT_TIMESTAMP,"佐藤　太郎の記載、タイトル","佐藤　太郎の記載、内容",1,0,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
+     VALUES (CURRENT_TIMESTAMP,"佐藤　太郎タイトル","佐藤　太郎アーティスト",1,0,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
 INSERT INTO daily_report_system.reports(report_date,title,content,employee_code,delete_flg,created_at,updated_at)
-     VALUES (CURRENT_TIMESTAMP,"田中　次郎の記載、タイトル","田中　次郎の記載、内容",2,0,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
+     VALUES (CURRENT_TIMESTAMP,"田中　次郎タイトル","田中　次郎アーティスト",2,0,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);

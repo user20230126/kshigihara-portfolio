@@ -29,7 +29,7 @@ public class ReportService {
         this.reportRepository = reportRepository;
     }
 
-    // 日報保存
+    // 保存
     @Transactional
     public ErrorKinds save(Report report, UserDetail userdetail) {
 
@@ -48,7 +48,7 @@ public class ReportService {
         return ErrorKinds.SUCCESS;
     }
 
-    // 日報削除
+    // 削除
     @Transactional
     public ErrorKinds delete(Integer id) {
 
@@ -60,7 +60,7 @@ public class ReportService {
         return ErrorKinds.SUCCESS;
     }
 
-    // 日報一覧表示処理
+    // 一覧表示処理
     public List<Report> findAll() {
         return reportRepository.findAll();
     }
@@ -90,7 +90,7 @@ public class ReportService {
         return report;
     }
     
-    //日報更新
+    // 更新
     @Transactional
     public ErrorKinds update(UserDetail userdetail, Report report, Integer id) {
         

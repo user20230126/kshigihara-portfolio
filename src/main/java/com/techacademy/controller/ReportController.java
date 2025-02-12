@@ -33,7 +33,7 @@ public class ReportController {
         this.reportService = reportService;
     }
 
-    // 日報一覧画面
+    // 一覧画面
     @GetMapping
     public String list(@AuthenticationPrincipal UserDetail userdetail, Model model) {
 
@@ -43,7 +43,7 @@ public class ReportController {
         return "reports/list";
     }
 
-    // 日報詳細画面
+    // 詳細画面
     @GetMapping(value = "/{id}/")
     public String detail(@PathVariable Integer id, Model model) {
 
@@ -51,7 +51,7 @@ public class ReportController {
         return "reports/detail";
     }
 
-    // 日報新規登録画面
+    // 新規登録画面
     @GetMapping(value = "/add")
     public String create(@AuthenticationPrincipal UserDetail userdetail, @ModelAttribute Report report, Model model) {
         model.addAttribute("employeeName", userdetail.getEmployee().getName());
@@ -59,7 +59,7 @@ public class ReportController {
         return "reports/new";
     }
 
-    // 日報新規登録処理
+    // 新規登録処理
     @PostMapping(value = "/add")
     public String add(@Validated Report report, BindingResult res, @AuthenticationPrincipal UserDetail userdetail,
             Employee employee, Model model) {
@@ -69,7 +69,7 @@ public class ReportController {
             return create(userdetail, report, model);
         }
 
-        // 論理削除を行った従業員番号を指定すると例外となるためtry~catchで対応
+        // 論理削除を行ったIDを指定すると例外となるためtry~catchで対応
         // (findByIdでは削除フラグがTRUEのデータが取得出来ないため)
         try {
             ErrorKinds result = reportService.save(report, userdetail);
@@ -88,7 +88,7 @@ public class ReportController {
         return "redirect:/reports";
     }
 
-    // 日報削除処理
+    // 削除処理
     @PostMapping(value = "/{id}/delete")
     public String delete(@PathVariable Integer id, @AuthenticationPrincipal UserDetail userDetail, Model model) {
 
@@ -103,7 +103,7 @@ public class ReportController {
         return "redirect:/reports";
     }
     
-    //日報更新画面
+    // 更新画面
     @GetMapping(value = "/{id}/update")
     public String getReport(@PathVariable("id") Integer id, @AuthenticationPrincipal UserDetail userdetail, Model model, @ModelAttribute Report report) {
     
@@ -119,7 +119,7 @@ public class ReportController {
         }
     }
     
-    // 日報更新処理
+    // 更新処理
     @PostMapping(value = "/{id}/update")
     public String update(@PathVariable("id") Integer id, @Validated Report report,BindingResult res,
             @AuthenticationPrincipal UserDetail userdetail,  Model model) {
